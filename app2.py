@@ -105,7 +105,7 @@ def generate_quiz_with_ai(topic, difficulty, num_questions):
     st.info("Generating quiz using Gemini AI... 🧠")
     prompt = f'Generate {num_questions} multiple-choice questions on "{topic}" (difficulty: {difficulty}). JSON only: list of objects with "question", "options", "answer".'
     try:
-        model = genai.GenerativeModel("models/gemini-2.0-flash")
+        model = genai.GenerativeModel("Gemini 2.5 Flash")
         response = model.generate_content(prompt)
         text_response = response.text.strip().replace("```json", "").replace("```", "")
         return json.loads(text_response)
